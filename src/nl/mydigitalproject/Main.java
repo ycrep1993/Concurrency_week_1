@@ -88,23 +88,28 @@ public class Main {
         elapsedTime = System.currentTimeMillis() - start;
         System.out.println("Het sorteren duurde " + elapsedTime + "ms");
 
-        System.out.println("Array 4 wordt gesorteerd");
-        start = System.currentTimeMillis();
-        s.bubbleSort(array4);
-        elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+//        System.out.println("Array 4 wordt gesorteerd");
+//        start = System.currentTimeMillis();
+//        s.bubbleSort(array4);
+//        elapsedTime = System.currentTimeMillis() - start;
+//        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+//
+//        System.out.println("Array 5 wordt gesorteerd");
+//        start = System.currentTimeMillis();
+//        s.bubbleSort(array5);
+//        elapsedTime = System.currentTimeMillis() - start;
+//        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+//
+//        System.out.println("Array 6 wordt gesorteerd");
+//        start = System.currentTimeMillis();
+//        s.bubbleSort(array6);
+//        elapsedTime = System.currentTimeMillis() - start;
+//        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
 
-        System.out.println("Array 5 wordt gesorteerd");
-        start = System.currentTimeMillis();
-        s.bubbleSort(array5);
-        elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-
-        System.out.println("Array 6 wordt gesorteerd");
-        start = System.currentTimeMillis();
-        s.bubbleSort(array6);
-        elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+        s.twoThreadBubbleSort(array1);
+        s.twoThreadBubbleSort(array2);
+        s.twoThreadBubbleSort(array3);
+        s.twoThreadBubbleSort(array6);
 
     }
 
