@@ -27,7 +27,7 @@ public class Main {
         array6 = new int[800000];
 
         //fill arrays
-        long start = System.currentTimeMillis();
+
         Random random = new Random();
         for (int i = 0; i < array1.length; i++) {
             array1[i] = random.nextInt();
@@ -64,7 +64,50 @@ public class Main {
         }
 
         System.out.println("filled array 6");
+
+
+        Sort s = new Sort();
+
+
+
+        System.out.println("Array 1 wordt gesorteerd");
+        long start = System.currentTimeMillis();
+        s.bubbleSort(array1);
         long elapsedTime = System.currentTimeMillis() - start;
-        System.out.println(elapsedTime);
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
+        System.out.println("Array 2 wordt gesorteerd");
+        start = System.currentTimeMillis();
+        s.bubbleSort(array2);
+        elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
+        System.out.println("Array 3 wordt gesorteerd");
+        start = System.currentTimeMillis();
+        s.bubbleSort(array3);
+        elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
+        System.out.println("Array 4 wordt gesorteerd");
+        start = System.currentTimeMillis();
+        s.bubbleSort(array4);
+        elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
+        System.out.println("Array 5 wordt gesorteerd");
+        start = System.currentTimeMillis();
+        s.bubbleSort(array5);
+        elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
+        System.out.println("Array 6 wordt gesorteerd");
+        start = System.currentTimeMillis();
+        s.bubbleSort(array6);
+        elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
     }
+
+
+
 }
