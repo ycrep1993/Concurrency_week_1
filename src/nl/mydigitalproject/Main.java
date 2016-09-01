@@ -27,6 +27,7 @@ public class Main {
         array6 = new int[800000];
 
         //fill arrays
+        long start = System.currentTimeMillis();
         Random random = new Random();
         for (int i = 0; i < array1.length; i++) {
             array1[i] = random.nextInt();
@@ -63,5 +64,7 @@ public class Main {
         }
 
         System.out.println("filled array 6");
+        long elapsedTime = System.currentTimeMillis() - start;
+        System.out.println(elapsedTime);
     }
 }
