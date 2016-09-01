@@ -5,12 +5,12 @@ import java.util.Random;
 public class Main {
 
     //Arrays to be sorted
-    int[] array1;
-    int[] array2;
-    int[] array3;
-    int[] array4;
-    int[] array5;
-    int[] array6;
+    private int[] array1;
+    private int[] array2;
+    private int[] array3;
+    private int[] array4;
+    private int[] array5;
+    private int[] array6;
 
 
     public static void main(String[] args) {
