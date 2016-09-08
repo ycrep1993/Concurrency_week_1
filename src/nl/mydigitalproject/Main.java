@@ -66,53 +66,8 @@ public class Main {
         System.out.println("filled array 6");
 
 
-        Sort s = new Sort();
-
-
-
-        System.out.println("Array 1 wordt gesorteerd");
-        long start = System.currentTimeMillis();
-        s.bubbleSort(array1);
-        long elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-
-        System.out.println("Array 2 wordt gesorteerd");
-        start = System.currentTimeMillis();
-        s.bubbleSort(array2);
-        elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-
-        System.out.println("Array 3 wordt gesorteerd");
-        start = System.currentTimeMillis();
-        s.bubbleSort(array3);
-        elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-
-//        System.out.println("Array 4 wordt gesorteerd");
-//        start = System.currentTimeMillis();
-//        s.bubbleSort(array4);
-//        elapsedTime = System.currentTimeMillis() - start;
-//        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-//
-//        System.out.println("Array 5 wordt gesorteerd");
-//        start = System.currentTimeMillis();
-//        s.bubbleSort(array5);
-//        elapsedTime = System.currentTimeMillis() - start;
-//        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-//
-//        System.out.println("Array 6 wordt gesorteerd");
-//        start = System.currentTimeMillis();
-//        s.bubbleSort(array6);
-//        elapsedTime = System.currentTimeMillis() - start;
-//        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-
-        s.twoThreadBubbleSort(array1);
-        s.twoThreadBubbleSort(array2);
-        s.twoThreadBubbleSort(array3);
-        s.twoThreadBubbleSort(array6);
-
+        Opdracht1 opdracht1 = new Opdracht1();
+        opdracht1.sort(array1, array2, array3, array4, array5, array6);
     }
-
-
 
 }
