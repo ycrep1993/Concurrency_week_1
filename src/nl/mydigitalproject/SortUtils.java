@@ -15,7 +15,7 @@ public class SortUtils {
         System.out.println("Sorting successful!!");
     }
 
-    public static int[] bubbleSort(int[] invoer) {
+    public static void bubbleSort(int[] invoer) {
         int i, j, tijdelijk;
         for (j = 0; j < invoer.length; j++) {
             for (i = 1; i < invoer.length - j; i++) {
@@ -26,7 +26,19 @@ public class SortUtils {
                 }
             }
         }
-        return invoer;
+    }
+
+    public static void bubbleSort(int[] invoer, int start, int end){
+        int i, j, tijdelijk;
+        for(j = start; j < end; j++){
+            for (i = start + 1; i < end - j; i++) {
+                if (invoer[i-1] > invoer[i]) {
+                    tijdelijk = invoer[i];
+                    invoer[i] = invoer[i-1];
+                    invoer[i-1] = tijdelijk;
+                }
+            }
+        }
     }
 
     public static int[] merge(int[] invoer) {
