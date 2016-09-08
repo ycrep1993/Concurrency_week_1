@@ -5,14 +5,14 @@ package nl.mydigitalproject;
  */
 public class SortUtils {
 
-    public static void isSorted(int[] arr) {
+    public static boolean isSorted(int[] arr) {
         int last = arr[0];
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < last) {
-                System.out.println("Something went wrong with the sorting!");
+                return false;
             }
         }
-        System.out.println("Sorting successful!!");
+        return true;
     }
 
     public static void bubbleSort(int[] invoer) {

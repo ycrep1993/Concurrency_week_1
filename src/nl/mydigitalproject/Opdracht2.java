@@ -31,6 +31,8 @@ public class Opdracht2 {
         long elapsedTime = System.currentTimeMillis() - start;
         System.out.println("Het sorteren duurde " + elapsedTime + "ms");
 
+        assert SortUtils.isSorted(invoer) : "Array is niet gesorteerd";
+
         //return finalResult;
     }
 }
