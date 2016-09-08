@@ -9,7 +9,7 @@ public class Opdracht2 {
 
         long start = System.currentTimeMillis();
         ThreadStarter bubble1 = new ThreadStarter(invoer, 0, invoer.length/2);
-        ThreadStarter bubble2 = new ThreadStarter(invoer, (invoer.length/2)+1, invoer.length);
+        ThreadStarter bubble2 = new ThreadStarter(invoer, invoer.length/2, invoer.length);
         Thread thread1 = new Thread(bubble1);
         Thread thread2 = new Thread(bubble2);
 
@@ -19,6 +19,9 @@ public class Opdracht2 {
         try{
             thread1.join();
             thread2.join();
+
+            long elapsedTime = System.currentTimeMillis() - start;
+            System.out.println("Voor het mergen " + elapsedTime + "ms");
 
             SortUtils.merge(invoer);
         }catch (InterruptedException ie){

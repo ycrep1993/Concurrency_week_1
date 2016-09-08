@@ -5,12 +5,14 @@ package nl.mydigitalproject;
  */
 public class ThreadStarter implements Runnable {
 
+    private int[] invoer;
+
     public ThreadStarter(int[] invoer, int start, int end) {
-        SortUtils.bubbleSort(invoer);
+        this.invoer = invoer;
     }
 
     @Override
     public void run() {
-
+        SortUtils.bubbleSort(invoer);
     }
 }

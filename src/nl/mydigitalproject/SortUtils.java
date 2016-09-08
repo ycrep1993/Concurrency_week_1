@@ -29,25 +29,49 @@ public class SortUtils {
         return invoer;
     }
 
-    public static int[] merge(int[] invoer, int threads) {
+    public static int[] merge(int[] invoer) {
 
-        int counter1 = 0, counter2 = 0, resultCounter = 0;
-        while (counter1 < array1.length && counter2 < array2.length){
-            if (array1[counter1] < array2[counter2]){
-                invoer[resultCounter++] = array1[counter1++];
-            }else {
-                invoer[resultCounter++] = array2[counter2++];
+        int[] result = new int[invoer.length];
+
+        int counterLeftPart = 0;
+        int counterRightPart = (invoer.length/2) + 1;
+        int counterResult = 0;
+
+        while (counterLeftPart < invoer.length/2 && counterRightPart < invoer.length){
+            if (invoer[counterLeftPart] < invoer[counterRightPart]){
+                result[counterResult++] = invoer[counterLeftPart++];
+            } else{
+                result[counterResult++] = invoer[counterRightPart++];
             }
         }
 
-        while (counter1 < array1.length){
-            invoer[resultCounter++] = array1[counter1++];
+        while(counterLeftPart < invoer.length/2){
+            result[counterResult++] = invoer[counterLeftPart++];
         }
 
-        while (counter2 < array2.length){
-            invoer[resultCounter++] = array2[counter2++];
+        while(counterRightPart < invoer.length){
+            result[counterResult++] = invoer[counterRightPart++];
         }
 
-        return invoer;
+        return result;
+
+//        int counter1 = 0, counter2 = 0, resultCounter = 0;
+//        while (counter1 < array1.length && counter2 < array2.length){
+//            if (array1[counter1] < array2[counter2]){
+//                invoer[resultCounter++] = array1[counter1++];
+//            }else {
+//                invoer[resultCounter++] = array2[counter2++];
+//            }
+//        }
+//
+//        while (counter1 < array1.length){
+//            invoer[resultCounter++] = array1[counter1++];
+//        }
+//
+//        while (counter2 < array2.length){
+//            invoer[resultCounter++] = array2[counter2++];
+//        }
+
+        //return invoer;
     }
 }

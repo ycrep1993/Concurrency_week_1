@@ -67,7 +67,16 @@ public class Main {
 
 
         Opdracht1 opdracht1 = new Opdracht1();
-        opdracht1.sort(array1, array2, array3, array4, array5, array6);
+
+        for (int i = 0; i < 10; i++) {
+            opdracht1.sort(array2);
+        }
+
+        Opdracht2 opdracht2 = new Opdracht2();
+
+        for (int i = 0; i < 10; i++) {
+            opdracht2.sort(array2);
+        }
     }
 
 }

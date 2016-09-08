@@ -48,4 +48,13 @@ public class Opdracht1 {
         System.out.println("Het sorteren duurde " + elapsedTime + "ms");
         SortUtils.isSorted(array6);
     }
+
+    public void sort(int[] array1){
+        System.out.println("Array 1 wordt gesorteerd");
+        long start = System.currentTimeMillis();
+        SortUtils.bubbleSort(array1);
+        long elapsedTime = System.currentTimeMillis() - start;
+        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+        SortUtils.isSorted(array1);
+    }
 }
