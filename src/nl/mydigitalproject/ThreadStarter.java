@@ -10,13 +10,14 @@ public class ThreadStarter implements Runnable {
     private int end;
 
     public ThreadStarter(int[] invoer, int start, int end) {
-        this.invoer = invoer;
+        this.invoer = invoer; // reference to original array
         this.start = start;
         this.end = end;
     }
 
     @Override
     public void run() {
+        // start the bubblesort
         SortUtils.bubbleSort(invoer, start, end);
     }
 }

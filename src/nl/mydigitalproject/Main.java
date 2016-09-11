@@ -1,6 +1,6 @@
 package nl.mydigitalproject;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -15,7 +15,6 @@ public class Main {
 
     public static void main(String[] args) {
         new Main().run();
-        System.out.println("end");
     }
 
     private void run() {
@@ -37,27 +36,43 @@ public class Main {
 
         System.out.println("Arrays are filled!");
         System.out.println();
-        System.out.println("Opdracht 1:");
-        Opdracht1 opdracht1 = new Opdracht1();
-        for (int i = 0; i < 4; i++) {
-            opdracht1.sort(array1);
-            SortUtils.fillArray(array1);
-        }
+        ArrayList<int[]> arrs = new ArrayList<>();
+        arrs.add(array1);
+        arrs.add(array2);
+        arrs.add(array3);
+        arrs.add(array4);
+        arrs.add(array5);
+        arrs.add(array6);
+        int j = 1;
+        for (int[] arr : arrs) {
+            System.out.println("array " + j);
+            // execute Opdracht 1 4 times.
+            System.out.println("-Opdracht 1:");
+            Opdracht1 opdracht1 = new Opdracht1();
+            for (int i = 0; i < 4; i++) {
+                //opdracht1.sort(arr);
+                SortUtils.fillArray(arr); // re-randomize the array
+            }
 
-        System.out.println();
-        System.out.println("Opdracht 2:");
-        Opdracht2 opdracht2 = new Opdracht2();
-        for (int i = 0; i < 4; i++) {
-            opdracht2.sort(array1);
-            SortUtils.fillArray(array1);
-        }
+            // execute Opdracht 2 4 times.
+            System.out.println();
+            System.out.println("-Opdracht 2:");
+            Opdracht2 opdracht2 = new Opdracht2();
+            for (int i = 0; i < 4; i++) {
+                opdracht2.sort(arr);
+                SortUtils.fillArray(arr); // re-randomize the array
+            }
 
-        System.out.println();
-        System.out.println("Opdracht 3:");
-        Opdracht3 opdracht3 = new Opdracht3();
-        for (int i = 0; i < 4; i++) {
-            opdracht3.opdracht3(array1);
-            SortUtils.fillArray(array1);
+            // execute Opdracht 3 4 times.
+            System.out.println();
+            System.out.println("-Opdracht 3:");
+            Opdracht3 opdracht3 = new Opdracht3();
+            for (int i = 0; i < 4; i++) {
+                opdracht3.opdracht3(arr);
+                SortUtils.fillArray(arr); // re-randomize the array
+            }
+            System.out.println();
+            j++;
         }
     }
 
