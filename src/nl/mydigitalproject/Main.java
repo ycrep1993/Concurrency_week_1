@@ -14,10 +14,11 @@ public class Main {
 
 
     public static void main(String[] args) {
-	    new Main().run();
+        new Main().run();
+        System.out.println("end");
     }
 
-    private void run(){
+    private void run() {
         //init arrays
         array1 = new int[25000];
         array2 = new int[50000];
@@ -27,55 +28,36 @@ public class Main {
         array6 = new int[800000];
 
         //fill arrays
+        SortUtils.fillArray(array1);
+        SortUtils.fillArray(array2);
+        SortUtils.fillArray(array3);
+        SortUtils.fillArray(array4);
+        SortUtils.fillArray(array5);
+        SortUtils.fillArray(array6);
 
-        Random random = new Random();
-        for (int i = 0; i < array1.length; i++) {
-            array1[i] = random.nextInt();
-        }
-
-        System.out.println("filled array 1");
-
-        for (int i = 0; i < array2.length; i++) {
-            array2[i] = random.nextInt();
-        }
-
-        System.out.println("filled array 2");
-
-        for (int i = 0; i < array3.length; i++) {
-            array3[i] = random.nextInt();
-        }
-
-        System.out.println("filled array 3");
-
-        for (int i = 0; i < array4.length; i++) {
-            array4[i] = random.nextInt();
-        }
-
-        System.out.println("filled array 4");
-
-        for (int i = 0; i < array5.length; i++) {
-            array5[i] = random.nextInt();
-        }
-
-        System.out.println("filled array 5");
-
-        for (int i = 0; i < array6.length; i++) {
-            array6[i] = random.nextInt();
-        }
-
-        System.out.println("filled array 6");
-
-
+        System.out.println("Arrays are filled!");
+        System.out.println();
+        System.out.println("Opdracht 1:");
         Opdracht1 opdracht1 = new Opdracht1();
-
-        for (int i = 0; i < 10; i++) {
-            opdracht1.sort(array2);
+        for (int i = 0; i < 4; i++) {
+            opdracht1.sort(array1);
+            SortUtils.fillArray(array1);
         }
 
+        System.out.println();
+        System.out.println("Opdracht 2:");
         Opdracht2 opdracht2 = new Opdracht2();
+        for (int i = 0; i < 4; i++) {
+            opdracht2.sort(array1);
+            SortUtils.fillArray(array1);
+        }
 
-        for (int i = 0; i < 10; i++) {
-            opdracht2.sort(array2);
+        System.out.println();
+        System.out.println("Opdracht 3:");
+        Opdracht3 opdracht3 = new Opdracht3();
+        for (int i = 0; i < 4; i++) {
+            opdracht3.opdracht3(array1);
+            SortUtils.fillArray(array1);
         }
     }
 

@@ -7,9 +7,12 @@ public class Opdracht2 {
 
     public void sort(int[] invoer) {
 
-        long start = System.currentTimeMillis();
-        ThreadStarter bubble1 = new ThreadStarter(invoer, 0, invoer.length/2);
-        ThreadStarter bubble2 = new ThreadStarter(invoer, invoer.length/2, invoer.length);
+        int start = 0;
+        int end = invoer.length - 1;
+
+        long startTimer = System.currentTimeMillis();
+        ThreadStarter bubble1 = new ThreadStarter(invoer, start, end/2);
+        ThreadStarter bubble2 = new ThreadStarter(invoer, end/2+1, end);
         Thread thread1 = new Thread(bubble1);
         Thread thread2 = new Thread(bubble2);
 
@@ -20,19 +23,17 @@ public class Opdracht2 {
             thread1.join();
             thread2.join();
 
-            long elapsedTime = System.currentTimeMillis() - start;
-            System.out.println("Voor het mergen " + elapsedTime + "ms");
+            assert SortUtils.isSorted(invoer, start, end/2) : "Eerste helft is niet gesorteerd";
+            assert SortUtils.isSorted(invoer, end/2+1, end) : "Tweede helft is niet gesorteerd";
 
-            SortUtils.merge(invoer);
+            invoer = SortUtils.merge(invoer);
+
+            long elapsedTime = System.currentTimeMillis() - startTimer;
+            System.out.println("Het sorteren duurde " + elapsedTime + "ms");
+
+            assert SortUtils.isSorted(invoer) : "Array is niet gesorteerd";
         }catch (InterruptedException ie){
             System.out.println("It stopped");
         }
-
-        long elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("Het sorteren duurde " + elapsedTime + "ms");
-
-        assert SortUtils.isSorted(invoer) : "Array is niet gesorteerd";
-
-        //return finalResult;
     }
 }

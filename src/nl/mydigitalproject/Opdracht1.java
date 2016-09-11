@@ -20,7 +20,6 @@ public class Opdracht1 {
     }
 
     public void sort(int[] array){
-        System.out.println("Array wordt gesorteerd");
         long start = System.currentTimeMillis();
         SortUtils.bubbleSort(array);
         long elapsedTime = System.currentTimeMillis() - start;
